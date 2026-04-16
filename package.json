@@ -1,6 +1,6 @@
 {
   "name": "@olifil/message-broker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Source of truth for message broker subjects and payloads in a microservices architecture",
   "license": "MIT",
   "author": {
