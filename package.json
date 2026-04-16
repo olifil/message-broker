@@ -1,0 +1,77 @@
+{
+  "name": "@olifil/message-broker",
+  "version": "0.1.0",
+  "description": "Source of truth for message broker subjects and payloads in a microservices architecture",
+  "license": "MIT",
+  "author": {
+    "name": "Olivier Fillol",
+    "email": "olivier@olivierfillol.fr",
+    "url": "https://olivierfillol.fr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olifil/message-broker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/olifil/message-broker/issues"
+  },
+  "homepage": "https://github.com/olifil/message-broker#readme",
+  "keywords": [
+    "ddd",
+    "microservices",
+    "message-broker",
+    "contracts",
+    "zod",
+    "typescript"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "peerDependencies": {
+    "zod": "^3.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/jest": "30.0.0",
+    "@types/node": "^22.0.0",
+    "eslint": "10.2.0",
+    "eslint-config-prettier": "10.1.8",
+    "jest": "30.3.0",
+    "prettier": "3.8.3",
+    "ts-jest": "29.4.9",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "8.58.2",
+    "zod": "^3.0.0"
+  }
+}
