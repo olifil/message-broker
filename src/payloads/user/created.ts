@@ -20,12 +20,12 @@ import { z } from 'zod';
  */
 export const UserCreatedPayloadSchema = z
   .object({
-    id: z.string().uuid(),
-    email: z.string().email().optional(),
+    id: z.uuid(),
+    email: z.email().optional(),
     phoneNumber: z.string().optional(),
     firstName: z.string().min(1),
     lastName: z.string().min(1),
-    createdAt: z.string().datetime(),
+    createdAt: z.iso.datetime(),
   })
   .refine((data) => data.email !== undefined || data.phoneNumber !== undefined, {
     message: 'At least one of email or phoneNumber must be provided',
